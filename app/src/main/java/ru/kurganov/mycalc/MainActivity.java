@@ -87,10 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         if (v.getId() == R.id.btn_1) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("1");
                 textResult.setText("");
@@ -102,10 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_2) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+           isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("2");
                 textResult.setText("");
@@ -117,10 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_3) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("3");
                 textResult.setText("");
@@ -132,10 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_4) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+           isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("4");
                 textResult.setText("");
@@ -147,10 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_5) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("5");
                 textResult.setText("");
@@ -162,10 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_6) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+           isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("6");
                 textResult.setText("");
@@ -177,10 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_7) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+           isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("7");
                 textResult.setText("");
@@ -192,10 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_8) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("8");
                 textResult.setText("");
@@ -207,10 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_9) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("9");
                 textResult.setText("");
@@ -222,10 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_0) {
-            if (flagOperation) {
-                textTable.setText("");
-                flagOperation = false;
-            }
+            isOperation();
             if (textTable.getText().equals("0") || reset || flagEquals) {
                 textTable.setText("0");
                 textResult.setText("");
@@ -307,6 +277,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textResult.append(b + " = ");
                 textTable.setText("" + res);
             }
+        }
+
+    }
+
+    public void isOperation() {
+        if (flagOperation) {
+            textTable.setText("");
+            flagOperation = false;
         }
     }
 }
