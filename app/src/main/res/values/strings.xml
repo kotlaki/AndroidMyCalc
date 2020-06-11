@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyCalc</string>
+    <string name="app_name">ქართული კალკულატორი</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
@@ -18,4 +18,7 @@
     <string name="div">/</string>
     <string name="_0table">0</string>
     <string name="clear">C</string>
+    <string name="btn_about">О программе</string>
+    <string name="about">Данная программа является собственностью Шалошвили Георгия Георгиевича™. Права на программу были переданы 12 июня 2020 года Кургановым Романом Васильевичем в качестве подарка на день рождение. ბედნიერი დაბადების დღე გენაცვალე!!!🇬🇪🍻🎂</string>
+    <string name="btn_close">Спасибо Роману Васильевичу😜</string>
 </resources>

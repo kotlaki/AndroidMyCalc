@@ -2,6 +2,7 @@ package ru.kurganov.mycalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    Intent intent;
     TextView textTable;
     TextView textResult;
     Button btn1;
@@ -29,10 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button equals;
     Button commit;
     Button clear;
+    Button about;
 
-    int a;
-    int b;
-    int res;
+    double a;
+    double b;
+    double res;
     String operation = "";
     boolean flagOperation = false;
     boolean flagEquals = false;
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        intent = new Intent(this, About.class);
         textTable = findViewById(R.id.textTable);
         textResult = findViewById(R.id.textResult);
         textResult.setMovementMethod(new ScrollingMovementMethod());
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn8 = findViewById(R.id.btn_8);
         btn9 = findViewById(R.id.btn_9);
         btn0 = findViewById(R.id.btn_0);
+        about = findViewById(R.id.btn_about);
         plus = findViewById(R.id.btn_plus);
         minus = findViewById(R.id.btn_minus);
         multiple = findViewById(R.id.btn_multiple);
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
         btn0.setOnClickListener(this);
+        about.setOnClickListener(this);
         commit.setOnClickListener(this);
         clear.setOnClickListener(this);
         plus.setOnClickListener(this);
@@ -206,6 +213,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        if (v.getId() == R.id.btn_about) {
+            startActivity(intent);
+        }
+
         if (v.getId() == R.id.btn_commit) {
             if (!textTable.getText().equals("0")) {
                 textTable.append(".");
@@ -219,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_plus) {
-            a = Integer.parseInt(textTable.getText().toString());
+            a = Double.parseDouble(textTable.getText().toString());
             operation = "plus";
             flagOperation = true;
             flagEquals = false;
@@ -227,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_minus) {
-            a = Integer.parseInt(textTable.getText().toString());
+            a = Double.parseDouble(textTable.getText().toString());
             operation = "minus";
             flagOperation = true;
             flagEquals = false;
@@ -235,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_div) {
-            a = Integer.parseInt(textTable.getText().toString());
+            a = Double.parseDouble(textTable.getText().toString());
             operation = "div";
             flagOperation = true;
             flagEquals = false;
@@ -243,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_multiple) {
-            a = Integer.parseInt(textTable.getText().toString());
+            a = Double.parseDouble(textTable.getText().toString());
             operation = "multiple";
             flagOperation = true;
             flagEquals = false;
@@ -251,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.btn_equals) {
-            b = Integer.parseInt(textTable.getText().toString());
+            b = Double.parseDouble(textTable.getText().toString());
             flagEquals = true;
 
             if (operation.equals("plus")) {

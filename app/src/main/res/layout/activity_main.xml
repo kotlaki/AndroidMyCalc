@@ -51,10 +51,11 @@
             android:text="@string/clear" />
 
         <Button
+            android:id="@+id/btn_about"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="false" />
+            android:text="@string/btn_about" />
 
     </TableRow>
 
